@@ -26,4 +26,22 @@ public class Arithmetic extends Progression {
 		double value = firstValue() + (n - 1) * commonDifference;
 		return value;
 	}
+	
+		@Override
+	public boolean equals(Object o) {
+		return (this.firstValue()     == ((Arithmetic)o).firstValue() && 
+				this.commonDifference == ((Arithmetic)o).commonDifference);
+	}
+
+	@Override
+	public Progression add(Progression other) {
+		return new Arithmetic(this.firstValue() + ((Arithmetic)other).firstValue(), 
+							  this.commonDifference + ((Arithmetic)other).commonDifference);
+	}
+
+	@Override
+	public Progression subtract(Progression other) {
+		return new Arithmetic(this.firstValue() - ((Arithmetic)other).firstValue(), 
+				  this.commonDifference - ((Arithmetic)other).commonDifference);
+	}
 }
