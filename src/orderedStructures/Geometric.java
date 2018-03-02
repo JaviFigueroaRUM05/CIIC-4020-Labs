@@ -28,4 +28,9 @@ public class Geometric extends Progression {
 		return value;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		return (this.firstValue() == ((Geometric)o).firstValue() && 
+				this.commonFactor == ((Geometric)o).commonFactor);
+	}
 }
